@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+
+	.calendario{
+		width:50%;
+		aling:center;
+		background-color:white;
+		border-collapse: collapse;
+		font-family: Arial;
+		font-size: 18px;
+	}
+	.calendario tr td{
+		border: 5px solid white;
+		background-color:#E6E6E6;
+		text-align: center;
+	}	
+
+ 	.calendario caption {
+			text-align:center;
+			padding:5px 10px;
+			background-color:#6E6E6E;
+			color:white;
+			font-weight:bold;
+	}
+
+	</style>
+</head>
+<body>
+
+	
+	<h1>Calendario</h1>
+
+	<table class="calendario" cellspacing="0">
+
+	{%set i=1%}
+	{%set j=1%}
+
+	{% for i in range(6) %}
+		<tr>
+		{% for j in range (7) %}
+			{%set l=(j+1) + (i*7)%}
+			{%if l <= 31%}
+				<td>{{l}}</td>
+			{%endif%}
+		{%endfor%}	
+		</tr>
+	{%endfor%}
+
+	</table>
+	 		
+
+	
+</body>
+</html>
